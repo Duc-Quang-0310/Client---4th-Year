@@ -2,10 +2,10 @@ import React from "react";
 import "./AuthForm.scss";
 
 interface iAuthFormProps {
-  outerImg: string;
-  centeredImg: string;
-  title: string;
-  logo: string;
+  outerImg?: string;
+  centeredImg?: string;
+  title?: string;
+  logo?: string;
   children?: React.ReactNode;
   classes?: string | undefined;
 }
@@ -21,9 +21,9 @@ export const AuthForm: React.FunctionComponent<iAuthFormProps> = ({
   return (
     <div className={`form-container ${classes}`}>
       <div className="signin-photo">
-        <img className="signin-outerImg" src={outerImg} alt="decor img" />
+        <img className="signin-outerImg" src={outerImg} alt="" />
         <div className="center-photo">
-          <img src={centeredImg} alt="main content" />
+          <img src={centeredImg} alt="" />
         </div>
       </div>
       <div className="signin-form">
