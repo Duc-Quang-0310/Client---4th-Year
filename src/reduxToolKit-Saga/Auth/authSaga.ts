@@ -1,4 +1,4 @@
-import {all, call, put, takeLatest, takeEvery} from 'redux-saga/effects'
+import {all, call, put, takeLatest} from 'redux-saga/effects'
 import { route } from '../../common/config/routes/routesName'
 import { webStorage } from '../../common/helper/storage'
 import { authServices } from '../../services/authServices'
