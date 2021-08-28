@@ -8,6 +8,7 @@ interface iAuthFormProps {
   logo?: string;
   children?: React.ReactNode;
   classes?: string | undefined;
+  err?: string | undefined;
 }
 
 export const AuthForm: React.FunctionComponent<iAuthFormProps> = ({
@@ -17,6 +18,7 @@ export const AuthForm: React.FunctionComponent<iAuthFormProps> = ({
   title,
   logo,
   children,
+  err,
 }) => {
   return (
     <div className={`form-container ${classes}`}>
@@ -31,6 +33,7 @@ export const AuthForm: React.FunctionComponent<iAuthFormProps> = ({
         <div className="form-input">
           <img src={logo} alt="" />
           <h1 className="text-center">{title}</h1>
+          {err && <div className="form-err">{err}</div>}
           {children}
         </div>
       </div>

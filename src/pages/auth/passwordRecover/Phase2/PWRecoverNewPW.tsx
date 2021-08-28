@@ -1,5 +1,8 @@
 import { Formik } from "formik";
 import React from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { route } from "../../../../common/config/routes/routesName";
 import {
   authButtonStyle,
   ButtonForm,
@@ -8,10 +11,37 @@ import {
   InputForm,
   normalInputStyle,
 } from "../../../../components/InputForm/InputForm";
-import { validatePWObj, validatePWSchema } from "../../authValidateObj";
+import { authServices } from "../../../../services/authServices";
+import {
+  iNewPWCheck,
+  validatePWObj,
+  validatePWSchema,
+} from "../../authValidateObj";
+import { iMatchProps } from "../../registration/Phase2/SignUpSuccess";
 import "./PWRecoreNEWPW.scss";
 
-export const PWRecoverNewPW: React.FunctionComponent = () => {
+export const PWRecoverNewPW: React.FunctionComponent<iMatchProps> = ({
+  match,
+}) => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const history = useHistory();
+  const [err, setErr] = useState<string>("");
+  const token = match.params.token;
+
+  const handleSubmitNewPassword = async (Props: iNewPWCheck) => {
+    try {
+      setLoading(true);
+      const passwordSend = {
+        password: Props.password,
+      };
+      const data = await authServices.pwrecovery_confirm(passwordSend, token);
+      history.push(route.PWRECOVER_SUCCESS);
+    } catch (error) {
+      setErr(error.response.data.message);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="form-container ">
       <div>
@@ -24,11 +54,13 @@ export const PWRecoverNewPW: React.FunctionComponent = () => {
           initialValues={validatePWObj}
           validationSchema={validatePWSchema}
           onSubmit={(values, { setSubmitting }) => {
-            console.log(values);
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+            const inputData: iNewPWCheck = {
+              password: values.password.trim(),
+              passwordConfirm: values.passwordConfirm.trim(),
+            };
+            handleSubmitNewPassword(inputData);
+            console.log("ok");
+            setSubmitting(false);
           }}
         >
           {(formik) => (
@@ -66,7 +98,11 @@ export const PWRecoverNewPW: React.FunctionComponent = () => {
                 }
                 variant="outlined"
               />
-              <ButtonForm buttonName="Xác nhận" styling={authButtonStyle} />
+              <ButtonForm
+                isLoading={loading}
+                buttonName="Xác nhận"
+                styling={authButtonStyle}
+              />
             </form>
           )}
         </Formik>

@@ -4,7 +4,6 @@ import {
   InputForm,
   normalInputStyle,
 } from "../../../components/InputForm/InputForm";
-import { useState } from "react";
 import {
   authButtonStyle,
   ButtonForm,
@@ -17,9 +16,46 @@ import {
   DECORIMG,
 } from "../authValidateObj";
 import { AuthForm } from "../../../components/AuthForm/AuthForm";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../../reduxToolKit-Saga/hooks";
+import { iLoginParams } from "../../../services/authTypes";
+import { login } from "../../../reduxToolKit-Saga/Auth/AuthSlice";
+import { useState } from "react";
+import { RootState } from "../../../reduxToolKit-Saga/store";
 
 export const SignIn: React.FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+  const [firstCheckout, setFirstCheckout] = useState<boolean>(false);
+  const [err, setErr] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const errMessage: string = useAppSelector(
+    (state: RootState) => state.auth.loggingMessage
+  );
+
+  console.log(" errMessage", errMessage);
+
+  const handleLoginSubmit = (props: iLoginParams): void => {
+    setFirstCheckout(true);
+    try {
+      setLoading(true);
+      dispatch(login(props));
+    } catch (error) {
+      setErr("Đã có lỗi xảy ra xin vui lòng thử lại sau");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  function handleError() {
+    if (errMessage !== "") {
+      return errMessage;
+    } else if (err) {
+      return err;
+    }
+    return undefined;
+  }
 
   return (
     <AuthForm
@@ -27,16 +63,19 @@ export const SignIn: React.FunctionComponent = () => {
       centeredImg={LOGINIMG}
       title="WELCOME"
       logo={LOGOLOGING}
+      err={firstCheckout ? handleError() : undefined}
     >
       <Formik
         initialValues={validateSignInObject}
         validationSchema={validateSignInSchema}
         onSubmit={(values, { setSubmitting }) => {
           console.log(values);
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          const inputData: iLoginParams = {
+            username: values.username,
+            password: values.password,
+          };
+          handleLoginSubmit(inputData);
+          setSubmitting(false);
         }}
       >
         {(formik) => (
@@ -64,9 +103,9 @@ export const SignIn: React.FunctionComponent = () => {
               helperText={formik.touched.password && formik.errors.password}
             />
             <ButtonForm
+              isLoading={loading}
               buttonName="Đăng nhập"
               styling={authButtonStyle}
-              isLoading={loading}
             />
           </form>
         )}

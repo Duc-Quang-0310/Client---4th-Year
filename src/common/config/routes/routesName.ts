@@ -3,8 +3,10 @@ export const route = {
     USERS: "/users",
     SIGNIN: "/users/sign-in",
     SIGNUP: "/users/sign-up",
+    SIGNUP_SUCCESS: "/users/sign-up/success/:token",
     PWRECOVER: "/users/pw-recovery",
-    PWRECOVER_NEWPASSWORD:"/users/pw-recovery/new-password",
+    PWRECOVER_NEWPASSWORD:"/users/pw-recovery/new-password/:token",
+    PWRECOVER_SUCCESS: "/users/pw-recovery/new-password/:token/success",
     CHAT:"/chat/:id",
     ERROR: "/error"
 }

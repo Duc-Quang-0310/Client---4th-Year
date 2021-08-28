@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+import { iPWRecover_P1 } from "../../services/authTypes";
 
 export const DECORIMG = "/img/wave.svg"
 
@@ -24,7 +25,14 @@ export const validateSignInSchema = Yup.object().shape({
 });
 
 //Sign - Up
-export const validateSignUpObject = {
+export interface iSignUpObject  {
+  username: string
+  email: string
+  password: string
+  passwordConfirm: string
+}
+
+export const validateSignUpObject:iSignUpObject = {
     username: "",
     email:"",
     password: "",
@@ -53,17 +61,29 @@ export const validateSignUpSchema = Yup.object().shape({
 //PW - Recover 
 export const PWRECOVERIMG = "/img/pwRecover.svg"
 
-export const validateEmailObj = {
+
+
+export const validateEmailObj:iPWRecover_P1 = {
+  username:"",
   email: ""
 }
 
 export const validateEmailSchema = Yup.object().shape({
+  username: Yup.string()
+  .min(6, "Tên tài khoản phải tối thiểu 6 ký tự")
+  .max(15, "Tên tài khoản không được quá 15 ký tự")
+  .required("Tên đăng nhập không được để trống"),
   email: Yup.string()
   .email("Không đúng định dạng email ")
   .required("Email không được để trống"),
 })
 
-export const validatePWObj = {
+export interface iNewPWCheck {
+  password: string,
+  passwordConfirm: string
+}
+
+export const validatePWObj:iNewPWCheck = {
   password: "",
   passwordConfirm: ""
 }

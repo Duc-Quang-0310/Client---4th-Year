@@ -1,10 +1,14 @@
 import { SignIn } from "../../../pages/auth/login/SignIn";
 import { PWRecoverNewPW } from "../../../pages/auth/passwordRecover/Phase2/PWRecoverNewPW";
 import { PWRecover } from "../../../pages/auth/passwordRecover/PWRecover";
+import { NewPWSuccess } from "../../../pages/auth/passwordRecover/Success/NewPWSuccess";
+import { SignUpSuccess } from "../../../pages/auth/registration/Phase2/SignUpSuccess";
 import { SignUp } from "../../../pages/auth/registration/SignUp";
 import { Errors } from "../../../pages/err/Errors";
 import { Home } from "../../../pages/home/Home";
+import { webStorage } from "../../helper/storage";
 import { iRoute, route } from "./routesName";
+
 
 const protectedRoutes:iRoute[] = [
   {
@@ -20,6 +24,12 @@ const protectedRoutes:iRoute[] = [
     component : SignUp,
   },
   {
+    path: route.SIGNUP_SUCCESS ,
+    name: "signup_success",
+    exact: true,
+    component : SignUpSuccess,
+  },
+  {
     path: route.PWRECOVER  ,
     name: "pwrecover",
     exact: true,
@@ -30,7 +40,15 @@ const protectedRoutes:iRoute[] = [
     name: "pwrecover_newpassword",
     exact: true,
     component : PWRecoverNewPW,
-  }
+  },
+  {
+    path: route.PWRECOVER_SUCCESS ,
+    name: "pwrecover_success",
+    exact: true,
+    component : NewPWSuccess,
+  },
+
+ 
 ]
 
 const routes:iRoute[] = [
@@ -49,7 +67,7 @@ const routes:iRoute[] = [
 ]
 
 export const routesSecured = () => {
-  const token: any = null
+  const token: any = webStorage.getToken("token")
   if(!!token) {
     return routes
   }

@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import "./ButtonForm.scss";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 interface iButtonFormProps {
   styling: Object;
@@ -17,7 +18,17 @@ export const authButtonStyle = {
   fontSize: "1.3rem",
   padding: "0.4em 5em",
   textTransform: "none",
-  marginTop: "3.5rem",
+  marginBlock: "3.5rem",
+};
+
+const authDisableStyle = {
+  background: "#dcdcdc",
+  borderRadius: "2rem",
+  color: "white",
+  fontSize: "1.3rem",
+  padding: "0.4em 5em",
+  textTransform: "none",
+  marginBlock: "3.5rem",
 };
 
 export const ButtonForm: React.FunctionComponent<iButtonFormProps> = ({
@@ -29,13 +40,13 @@ export const ButtonForm: React.FunctionComponent<iButtonFormProps> = ({
 }): React.ReactElement => {
   return (
     <Button
-      className={`${className} disable`}
-      style={styling}
+      className={`${className}}`}
+      style={isLoading ? authDisableStyle : styling}
       onClick={handleSubmitEvent}
       disabled={isLoading}
       type="submit"
     >
-      {buttonName}
+      {isLoading ? <p>Đang xử lý ...</p> : buttonName}
     </Button>
   );
 };
