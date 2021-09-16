@@ -1,0 +1,84 @@
+@import "../../sass/variable";
+
+.navbar {
+  width: 100%;
+  height: 5rem;
+  padding: 3rem 14rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+
+  img {
+    height: 6rem;
+  }
+}
+
+.nav-list {
+  width: 100%;
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    font: {
+      size: 20px;
+      weight: 400;
+    }
+
+    li {
+      margin-inline: 2.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-inactive {
+      color: #dcdcdc;
+    }
+
+    .nav-active {
+      color: $primary-color;
+    }
+  }
+
+  .nav-items {
+    padding-block: 1rem;
+  }
+
+  .nav-underline {
+    width: 100px;
+    height: 3px;
+    position: absolute;
+    top: 25%;
+  }
+
+  .nav-underline::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .nav-items:hover ~ .nav-underline::before {
+    transform: scaleX(1);
+  }
+
+  .nav-donate {
+    color: #00bfa6;
+    background: white;
+    padding: 0.8rem 1.7rem;
+    border-radius: 29px;
+    transition: 400;
+  }
+
+  .nav-donate_reverse {
+    color: #fff;
+    background: #00bfa6;
+  }
+}

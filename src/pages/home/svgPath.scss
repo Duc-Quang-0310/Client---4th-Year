@@ -1,0 +1,53 @@
+@import "../../sass/variable";
+
+.svg-container {
+  width: 20%;
+  padding: 2em 2em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  transition: 0.4s;
+
+  .svg-hero {
+    margin-block: 3rem;
+  }
+
+  h1 {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    padding-inline: 0.8rem;
+    margin-bottom: 1em;
+    color: black;
+  }
+}
+
+//hover
+.svg-container:hover {
+  background: $primary-color;
+}
+
+.svg-container:hover h1 {
+  color: #fff;
+}
+
+.svg-container:hover p {
+  color: #fff;
+}
+
+.svg-container:hover .hover-effect {
+  stroke: #fff;
+}
+
+.svg-container:hover .hover-fill {
+  fill: #fff;
+}

@@ -1,0 +1,112 @@
+@import "../../sass/variable";
+
+.media-background {
+  height: 95vh;
+  padding-top: 10vh;
+  position: relative;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .circle {
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    background: #fff;
+    border-radius: 100% 100%;
+    right: 22vw;
+    top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .circle-border {
+      width: 93%;
+      height: 93%;
+      border: 3px solid $primary-color;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-size: 16px;
+        opacity: 0.7;
+        margin-bottom: 1rem;
+      }
+
+      .block {
+        width: 30px;
+        height: 4px;
+        background: $primary-color;
+        margin-block: 15px;
+        border-radius: 30px;
+      }
+
+      h2,
+      p {
+        padding-inline: 2em;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.layout-wrapper {
+  width: 100%;
+
+  .content-title {
+    font-size: 42px;
+    color: $primary-color;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+  }
+}
+
+.content-wrapper {
+  width: 75vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  .content-paragraph {
+    font-size: 23px;
+    margin-block: 1em;
+  }
+
+  border-bottom: 8px solid $primary-color;
+}
+
+.content-main {
+  display: flex;
+
+  .left-main {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+
+    .expert-wrapper {
+      width: 30%;
+      margin-block: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 100% 100%;
+      }
+    }
+  }
+
+  .right-main {
+    flex: 1;
+  }
+}

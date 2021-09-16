@@ -1,9 +1,11 @@
+import { About } from "../../../pages/about/About";
 import { SignIn } from "../../../pages/auth/login/SignIn";
 import { PWRecoverNewPW } from "../../../pages/auth/passwordRecover/Phase2/PWRecoverNewPW";
 import { PWRecover } from "../../../pages/auth/passwordRecover/PWRecover";
 import { NewPWSuccess } from "../../../pages/auth/passwordRecover/Success/NewPWSuccess";
 import { SignUpSuccess } from "../../../pages/auth/registration/Phase2/SignUpSuccess";
 import { SignUp } from "../../../pages/auth/registration/SignUp";
+import { Chat } from "../../../pages/chat/Chat";
 import { Errors } from "../../../pages/err/Errors";
 import { Home } from "../../../pages/home/Home";
 import { webStorage } from "../../helper/storage";
@@ -47,9 +49,8 @@ const protectedRoutes:iRoute[] = [
     exact: true,
     component : NewPWSuccess,
   },
-
- 
 ]
+
 
 const routes:iRoute[] = [
   {
@@ -63,7 +64,19 @@ const routes:iRoute[] = [
     name:"error",
     exact: true,
     component: Errors
-  }
+  },
+  {
+    path: route.ABOUT,
+    name:"about",
+    exact: true,
+    component: About
+  },
+  {
+    path: route.CHAT ,
+    name: "chat",
+    exact: true,
+    component : Chat,
+  },
 ]
 
 export const routesSecured = () => {

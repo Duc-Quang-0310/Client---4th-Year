@@ -8,7 +8,8 @@ export const route = {
     PWRECOVER_NEWPASSWORD:"/users/pw-recovery/new-password/:token",
     PWRECOVER_SUCCESS: "/users/pw-recovery/new-password/:token/success",
     CHAT:"/chat/:id",
-    ERROR: "/error"
+    ERROR: "/error",
+    ABOUT: "/about"
 }
 
 export interface iRoute {

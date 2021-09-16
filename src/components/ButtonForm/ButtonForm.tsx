@@ -1,14 +1,14 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import "./ButtonForm.scss";
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 interface iButtonFormProps {
   styling: Object;
   className?: string;
-  handleSubmitEvent?: () => void;
+  handleSubmitEvent?: (e: any) => void;
   isLoading?: boolean;
   buttonName: string;
+  endIcon?: React.ReactNode;
 }
 
 export const authButtonStyle = {
@@ -37,6 +37,7 @@ export const ButtonForm: React.FunctionComponent<iButtonFormProps> = ({
   handleSubmitEvent,
   buttonName,
   isLoading,
+  endIcon,
 }): React.ReactElement => {
   return (
     <Button
@@ -45,6 +46,7 @@ export const ButtonForm: React.FunctionComponent<iButtonFormProps> = ({
       onClick={handleSubmitEvent}
       disabled={isLoading}
       type="submit"
+      endIcon={endIcon}
     >
       {isLoading ? <p>Đang xử lý ...</p> : buttonName}
     </Button>
