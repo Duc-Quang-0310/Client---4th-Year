@@ -1,7 +1,7 @@
 @import "../../sass/variable";
 
 .media-background {
-  height: 95vh;
+  height: 80vh;
   padding-top: 10vh;
   position: relative;
 
@@ -13,12 +13,12 @@
 
   .circle {
     position: absolute;
-    width: 28rem;
-    height: 28rem;
+    width: 28em;
+    height: 28em;
     background: #fff;
     border-radius: 100% 100%;
     right: 22vw;
-    top: 20vh;
+    top: calc(80vh / 2 - 12rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@
   display: flex;
 
   .left-main {
-    flex: 2;
+    flex: 3;
     display: flex;
     flex-wrap: wrap;
 
@@ -102,11 +102,34 @@
         width: 120px;
         height: 120px;
         border-radius: 100% 100%;
+        object-fit: cover;
       }
     }
   }
 
   .right-main {
     flex: 1;
+
+    img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50% 50%;
+    }
+  }
+
+  .number-container {
+    margin-bottom: 3rem;
+    h2 {
+      text-align: center;
+      font-size: 4rem;
+      color: $primary-color;
+    }
+
+    p {
+      padding-inline: 1rem;
+      font-size: 20px;
+    }
   }
 }
+
+// our- works

@@ -8,6 +8,7 @@ import { SignUp } from "../../../pages/auth/registration/SignUp";
 import { Chat } from "../../../pages/chat/Chat";
 import { Errors } from "../../../pages/err/Errors";
 import { Home } from "../../../pages/home/Home";
+import { Works } from "../../../pages/works/Works";
 import { webStorage } from "../../helper/storage";
 import { iRoute, route } from "./routesName";
 
@@ -76,6 +77,12 @@ const routes:iRoute[] = [
     name: "chat",
     exact: true,
     component : Chat,
+  },
+  {
+    path: route.OUR_WORKS ,
+    name: "works",
+    exact: true,
+    component : Works,
   },
 ]
 

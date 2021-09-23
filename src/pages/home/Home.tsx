@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import {
   ChevronLeftRounded,
@@ -10,12 +10,12 @@ import {
   authButtonStyle,
   ButtonForm,
 } from "../../components/ButtonForm/ButtonForm";
-import { useState } from "react";
 import { imgLink, title } from "../../common/constants/home";
 import { Issue } from "./issue/Issue";
 import { Priority } from "./priority/Priority";
 import { Result } from "./result/Result";
 import { Product } from "./Product/Product";
+import { ChatCloud } from "../../components/ChatCloud/ChatCloud";
 
 export const Home: React.FunctionComponent = () => {
   const [index, setIndex] = useState(0);
@@ -25,16 +25,17 @@ export const Home: React.FunctionComponent = () => {
   };
 
   const hanldeRightArrow = () => {
-    index === 2 ? setIndex(0) : setIndex(index + 1);
+    index === imgLink.length - 1 ? setIndex(0) : setIndex(index + 1);
   };
 
   const hanldeLeftArrow = () => {
-    index === 0 ? setIndex(2) : setIndex(index - 1);
+    index === imgLink.length - 1 ? setIndex(2) : setIndex(index - 1);
   };
 
   return (
     <div className="homepage-container">
       <Navbar />
+      <ChatCloud />
       <div className="slideshow-wrapper">
         <div className="slideshow-btn slideshow-left" onClick={hanldeLeftArrow}>
           <ChevronLeftRounded className="slideshow-icon" fontSize="large" />

@@ -6,9 +6,9 @@ import { withStyles } from "@material-ui/core/styles";
 interface iInputFormProps {
   label: string;
   type: "text" | "password" | "email";
-  value: string | number | undefined;
+  value?: string | number | undefined;
   name: string;
-  handleChange: (e: any) => void;
+  handleChange?: (e: any) => void;
   handleBlur?: (e: any) => void;
   styling: object;
   error?: boolean | undefined;

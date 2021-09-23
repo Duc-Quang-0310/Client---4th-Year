@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { ButtonForm } from "../../../components/ButtonForm/ButtonForm";
 import { Send } from "@material-ui/icons/";
 import { io } from "socket.io-client";
 import { useEffect } from "react";
 import { baseURL } from "../../../services/api/axiosAddress";
-import { useState } from "react";
 
 const BtnSendStyle = {
   padding: "0.6rem 1rem",
@@ -42,20 +41,25 @@ export const ChatDialog: React.FC<iChatDialogProps> = ({
     imgLink: imgLink,
   });
   const [conversations, setConversations] = useState<Array<iConversation>>([]);
+  const messageEndRef = useRef<any>(null);
 
   useEffect(() => {
     socket.on("message", ({ message, name, id, imgLink }) => {
       setConversations([...conversations, { message, name, id, imgLink }]);
     });
+
     return () => {
       socket.disconnect();
     };
   }, [conversations]);
 
-  const onSubmitMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView();
+  }, [conversations]);
+
+  const onSubmitMessage = () => {
     const { message, name, id, imgLink } = state;
     socket.emit("message", { message, name, id, imgLink });
-    e.preventDefault();
     setState({ message: "", name: name, id: id, imgLink: imgLink });
   };
 
@@ -101,7 +105,10 @@ export const ChatDialog: React.FC<iChatDialogProps> = ({
   return (
     <div className="chat-dialog">
       <div className="chat-dialog_header"></div>
-      <div style={{ overflowY: "visible" }}>{renderChat()}</div>
+      <div className="chat-hero">
+        {renderChat()}
+        <div ref={messageEndRef} />
+      </div>
       <div className="chat-dialog-input">
         <input
           type="text"
@@ -110,12 +117,13 @@ export const ChatDialog: React.FC<iChatDialogProps> = ({
           name="message"
           value={state.message}
           onChange={(e) => onTextChange(e)}
+          onKeyDown={(e) => e.key === "Enter" && onSubmitMessage()}
         />
         <ButtonForm
           styling={BtnSendStyle}
           buttonName="Send"
           endIcon={<Send />}
-          handleSubmitEvent={(e) => onSubmitMessage(e)}
+          handleSubmitEvent={() => onSubmitMessage()}
         />
       </div>
     </div>

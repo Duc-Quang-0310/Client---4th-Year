@@ -5,3 +5,10 @@ export const about = {
     content: " For more than 50 years we’ve been pioneers, using science and different perspectives to make the environment safer and healthier for us all"
 }
 
+export const work = {
+    title: "OUR WORK",
+    image:"https://res.cloudinary.com/dsykf3mo9/image/upload/v1632229209/4th-Years/Our_Work_Hero_20-1_C_final-from_20PT_208-20_1600x2400_w0r7z9.webp",
+    subTitle: "What makes our solutions last?",
+    content: "When we bring the right problem-solvers together, we see the challenges more clearly. With that know-how and insight, we take action in ways that endure."
+}
+

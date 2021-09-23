@@ -3,7 +3,9 @@ import { about } from "../../common/constants/media";
 import { MediaBG } from "../../components/MediaBackground/MediaBG";
 import { Navbar } from "../../components/Navbar/Navbar";
 import "./About.scss";
+import { Act } from "./act/Act";
 import { People } from "./people/People";
+import { Statis } from "./statis/Statis";
 
 export const About: React.FC = () => {
   return (
@@ -33,6 +35,8 @@ export const About: React.FC = () => {
         </p>
       </div>
       <People />
+      <Statis />
+      <Act />
     </div>
   );
 };

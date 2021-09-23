@@ -15,7 +15,7 @@ export const MediaBG: React.FunctionComponent<iMediaProps> = ({
 }) => {
   return (
     <div className="media-background">
-      <img src={image} alt="" />
+      <img style={{ marginBlockStart: "1rem" }} src={image} alt="" />
       <div className="circle">
         <div className="circle-border">
           <h3>{title}</h3>

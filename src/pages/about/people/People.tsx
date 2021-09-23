@@ -1,7 +1,14 @@
 import React from "react";
 import { experts } from "../../../common/constants/about";
+import { Card } from "../../../components/CardForm/Card";
 
 export const People: React.FC = () => {
+  const perspective = "PARTNER PERSPECTIVE";
+  const speech =
+    " EDF does constructive, thoughtful, hard work, and that gains respect — and results. ";
+  const name = "George P. Shultz";
+  const job = "Former U.S. Secretary of State";
+
   return (
     <div className="content-wrapper">
       <h2 className="content-title">Our people</h2>
@@ -29,7 +36,14 @@ export const People: React.FC = () => {
             );
           })}
         </div>
-        <div className="right-main"></div>
+        <div className="right-main">
+          <Card
+            perspective={perspective}
+            speech={speech}
+            job={job}
+            name={name}
+          />
+        </div>
       </div>
     </div>
   );

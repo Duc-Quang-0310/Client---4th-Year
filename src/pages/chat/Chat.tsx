@@ -6,7 +6,7 @@ import "./Chat.scss";
 import { ChatDialog } from "./ChatDialog/ChatDialog";
 import { ChatList } from "./ChatList/ChatList";
 
-interface iAccountProps {
+export interface iAccountProps {
   _id: string;
   name: string;
   isAdmin: Boolean;

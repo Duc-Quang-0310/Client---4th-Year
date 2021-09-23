@@ -1,0 +1,20 @@
+@import "../../sass/variable";
+
+.text-primary {
+  color: $primary-color !important;
+  margin-inline: 2em;
+}
+
+.text-normal {
+  color: $black !important;
+}
+
+.left-main {
+  .img-hero {
+    flex: 2;
+  }
+
+  .card {
+    flex: 1;
+  }
+}

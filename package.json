@@ -18,6 +18,8 @@
     "formik": "^2.2.9",
     "node-sass": "^4.14.1",
     "react": "^17.0.2",
+    "react-animated-number": "^0.4.4",
+    "react-countup": "^6.0.0",
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
     "react-redux": "^7.2.4",

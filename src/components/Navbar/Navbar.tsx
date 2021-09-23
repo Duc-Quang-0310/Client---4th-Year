@@ -44,7 +44,7 @@ export const Navbar: React.FunctionComponent = () => {
         <ul>
           <li>
             {homeCheck(windowPath) ? (
-              <Link className={`nav-items`} to={route.HOME}>
+              <Link className={`nav-items`} to={route.OUR_WORKS}>
                 Our Work
               </Link>
             ) : (
@@ -52,7 +52,7 @@ export const Navbar: React.FunctionComponent = () => {
                 className={`nav-items ${
                   pathNumber === 2 ? `nav-active` : `nav-inactive`
                 } `}
-                to={route.HOME}
+                to={route.OUR_WORKS}
               >
                 Our Work
               </Link>

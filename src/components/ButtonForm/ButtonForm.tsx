@@ -5,7 +5,7 @@ import "./ButtonForm.scss";
 interface iButtonFormProps {
   styling: Object;
   className?: string;
-  handleSubmitEvent?: (e: any) => void;
+  handleSubmitEvent?: () => void;
   isLoading?: boolean;
   buttonName: string;
   endIcon?: React.ReactNode;
