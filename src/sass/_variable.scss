@@ -13,3 +13,7 @@ $light-grey: #f2f2f2;
 $primary-color: #00bfa6;
 $primary-dark: #008c7a;
 $primary-light: #00f2d2;
+
+@function rem($pixels, $content: 16) {
+  @return ($pixels / $content) * 1rem;
+}

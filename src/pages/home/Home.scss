@@ -118,7 +118,7 @@
       position: absolute;
       bottom: 5%;
       left: 3%;
-      font-size: 18px;
+      font-size: rem(18);
       color: #fff;
       font-weight: 600;
     }
@@ -154,7 +154,7 @@
   .issue-content {
     h3 {
       letter-spacing: 2px;
-      margin-bottom: 10px;
+      margin-bottom: rem(10);
     }
     position: absolute;
     bottom: 0;
@@ -165,7 +165,7 @@
   .issue-plaintext {
     display: none;
     transition: 800ms;
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
   }
 
   .issue-wrapper:hover > .issue-img {
@@ -204,7 +204,7 @@
       position: absolute;
       bottom: 5%;
       left: 3%;
-      font-size: 18px;
+      font-size: rem(18);
       color: #fff;
       font-weight: 600;
     }
