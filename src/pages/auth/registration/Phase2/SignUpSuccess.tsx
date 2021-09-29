@@ -17,7 +17,7 @@ export const SignUpSuccess: React.FunctionComponent<iMatchProps> = ({
   match,
 }) => {
   const params = match.params.token;
-  console.log(params);
+  console.log("params", params);
   useEffect(() => {
     authServices.register_confirm(params);
   }, [params]);

@@ -29,7 +29,6 @@ const homeCheck = (pathname: string) => {
 export const Navbar: React.FunctionComponent = () => {
   const windowPath = window.location.pathname;
   const pathNumber = comparePathname(windowPath);
-  console.log(pathNumber);
 
   return (
     <nav className="navbar">
@@ -65,7 +64,7 @@ export const Navbar: React.FunctionComponent = () => {
               <Link
                 className={`nav-items 
                `}
-                to={route.HOME}
+                to={route.INVOLVED}
               >
                 Involved
               </Link>
@@ -74,7 +73,7 @@ export const Navbar: React.FunctionComponent = () => {
                 className={`nav-items ${
                   pathNumber === 3 ? `nav-active` : `nav-inactive`
                 } `}
-                to={route.HOME}
+                to={route.INVOLVED}
               >
                 Involved
               </Link>

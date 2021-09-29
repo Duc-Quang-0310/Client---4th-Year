@@ -34,8 +34,6 @@ export const SignIn: React.FunctionComponent = () => {
     (state: RootState) => state.auth.loggingMessage
   );
 
-  console.log(" errMessage", errMessage);
-
   const handleLoginSubmit = (props: iLoginParams): void => {
     setFirstCheckout(true);
     try {
@@ -68,6 +66,7 @@ export const SignIn: React.FunctionComponent = () => {
       <Formik
         initialValues={validateSignInObject}
         validationSchema={validateSignInSchema}
+        enableReinitialize
         onSubmit={(values, { setSubmitting }) => {
           console.log(values);
           const inputData: iLoginParams = {

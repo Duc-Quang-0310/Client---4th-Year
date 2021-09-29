@@ -6,6 +6,7 @@ import { MediaBG } from "../../components/MediaBackground/MediaBG";
 import { Impact } from "./impact/Impact";
 import { WhatWeDo } from "./whatWeDo/WhatWeDo";
 import { HowWeDo } from "./howWeDo/HowWeDo";
+import { Act } from "../about/act/Act";
 
 export const Works: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ export const Works: React.FC = () => {
       <Impact />
       <WhatWeDo />
       <HowWeDo />
+      <Act />
     </div>
   );
 };

@@ -8,10 +8,10 @@ import { SignUp } from "../../../pages/auth/registration/SignUp";
 import { Chat } from "../../../pages/chat/Chat";
 import { Errors } from "../../../pages/err/Errors";
 import { Home } from "../../../pages/home/Home";
+import { Involved } from "../../../pages/involved/Involved";
 import { Works } from "../../../pages/works/Works";
 import { webStorage } from "../../helper/storage";
 import { iRoute, route } from "./routesName";
-
 
 const protectedRoutes:iRoute[] = [
   {
@@ -84,6 +84,12 @@ const routes:iRoute[] = [
     exact: true,
     component : Works,
   },
+  {
+    path: route.INVOLVED ,
+    name: "involved",
+    exact: true,
+    component : Involved,
+  }
 ]
 
 export const routesSecured = () => {

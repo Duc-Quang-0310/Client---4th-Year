@@ -10,7 +10,8 @@ export const route = {
     CHAT:"/chat/:id",
     ERROR: "/error",
     ABOUT: "/about",
-    OUR_WORKS:"/our-work"
+    OUR_WORKS:"/our-work",
+    INVOLVED: "/involved"
 }
 
 export interface iRoute {

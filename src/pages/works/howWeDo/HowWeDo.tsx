@@ -13,6 +13,7 @@ export const HowWeDo: React.FunctionComponent = () => {
     setSeeMore(!seeMore);
     setHow(id);
   }
+
   return (
     <div className="content-wrapper">
       <h2 className="content-title">How we do it</h2>
@@ -28,7 +29,7 @@ export const HowWeDo: React.FunctionComponent = () => {
           style={{ paddingInline: "1rem" }}
           className="left-main reverse-flex"
         >
-          <div className="img-hero ">
+          <div style={{ paddingInline: "1rem" }} className="img-hero ">
             <div style={{ height: "100%" }} className="img-container">
               <Link
                 style={{ width: "100%", height: "100%" }}

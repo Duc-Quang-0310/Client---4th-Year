@@ -97,7 +97,7 @@ export const howWeDo:iWorks[] =[
     {
         id: 2,
         mainTitle: "Economics",
-        logoImg: "/img/climate.jpg",
+        logoImg: "/img/economics.jpg",
         now: "We examine every environmental problem through an economic lens.",
         imgLink:"https://www.edf.org/sites/default/files/hwdi/hwdi_economics_542x434.jpg",
         imgTitle:"case study",
@@ -110,7 +110,7 @@ export const howWeDo:iWorks[] =[
     {
         id: 3,
         mainTitle: "Partnerships",
-        logoImg: "/img/climate.jpg",
+        logoImg: "/img/partnership.jpg",
         now: "With our partners, we achieve what no environmental group can do alone.",
         imgLink:"https://www.edf.org/sites/default/files/hwdi/hwdi_partnerships_542x434.jpg",
         imgTitle:"case study",
@@ -123,11 +123,11 @@ export const howWeDo:iWorks[] =[
     {
         id: 4,
         mainTitle: "Advocacy",
-        logoImg: "/img/climate.jpg",
-        now: "Bipartisan win : Billions for recovery",
+        logoImg: "/img/advocacy.jpg",
+        now: "With our allies, we shape strong, bipartisan policy and fight for great environmental laws.",
         imgLink:"https://www.edf.org/sites/default/files/inline-images/Egret-532x434.jpg",
         imgTitle:"case study",
-        imgContent:" What makes a boat smart, and why does it matter",
+        imgContent:"Bipartisan win : Billions for recovery",
         perspective:"STAFF PERSPECTIVE",
         pText:"EDF helped lay the foundation for today’s bedrock environmental laws. We know how to defend them.",
         pName:"Vickie Patton",

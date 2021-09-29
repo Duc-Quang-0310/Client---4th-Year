@@ -26,7 +26,7 @@ export const WhatWeDo: React.FunctionComponent = () => {
         className="content-main reverse-flex"
       >
         <div style={{ paddingInline: "1rem" }} className="left-main">
-          <div className="img-hero">
+          <div style={{ paddingInline: "1rem" }} className="img-hero">
             <div style={{ height: "100%" }} className="img-container">
               <Link
                 style={{ width: "100%", height: "100%" }}

@@ -12,3 +12,10 @@ export const work = {
     content: "When we bring the right problem-solvers together, we see the challenges more clearly. With that know-how and insight, we take action in ways that endure."
 }
 
+export const involve = {
+    title: "involved",
+    image: "https://res.cloudinary.com/dsykf3mo9/image/upload/v1631180594/4th-Years/Unknown-1_fcqh1a.webp",
+    subTitle: "Join a powerful force of over 2.5 million allies",
+    content: "Together, we solved acid rain in the U.S. Now we’re cutting climate pollution, reviving fish populations and more around the world. Team up with us. Let’s create a better future."
+}
+
